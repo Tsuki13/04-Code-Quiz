@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Script&display=swap');
+
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family:sans-serif
+    font-family:'Nova Script'
 }
 
 :root {
-    --hue-neutral: 300;
+    background-color: black;
 }
 
 body {
-    --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
     display: flex;
@@ -16,7 +17,6 @@ body {
     height: 100vh; 
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
 }
 
 .container {
@@ -50,3 +50,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.timerDisplay {
+    border: 2px solid black;
+    background-color:beige;
+    padding: 10px;
+    width: 800x;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+}
+
