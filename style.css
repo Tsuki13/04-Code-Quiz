@@ -28,6 +28,7 @@ body {
     max-width: 80%;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
+   
 }
 
 .hide {
@@ -51,13 +52,26 @@ body {
     align-items: center;
 }
 
-.timerDisplay {
+#timerDisplay {
     border: 2px solid black;
     background-color:beige;
     padding: 10px;
-    width: 800x;
+    width: 100px;
     max-width: 80%;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
+    position: fixed;
+    top: 0;   
 }
-
+#scoreDisplay {
+    border: 2px solid black;
+    background-color:beige;
+    padding: 10px;
+    width: 100px;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+    position: fixed;
+    top: 0;
+    right: 0;  
+}

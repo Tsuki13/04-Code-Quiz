@@ -1,17 +1,20 @@
 var startBtn = document.getElementById("start-btn");
-var nextBtn = document.getElementById('next-btn')
+var nextBtn = document.getElementById('next-btn');
+var restartBtn = document.getElementById('restart-btn');
 var questionContainer = document.getElementById("question-container");
 var questionTextEl = document.getElementById('question');
 var answerTextEl = document.getElementById('answer-buttons');
-var startingMin = 1;
 let time = 1 * 60;
+
 var timerElement = document.getElementById('timerDisplay');
+var scoreDisplay = document.getElementById('scoreDisplay');
 
 let randomQuestions, questionNum
 
 let score = 0;
 
 startBtn.addEventListener('click', startQuiz);
+restartBtn.addEventListener('click', startQuiz);
 nextBtn.addEventListener('click', () => {
     questionNum++
     setNextQuestion()
@@ -19,7 +22,6 @@ nextBtn.addEventListener('click', () => {
 
 var timer = setInterval(updateTimer, 1000);
 
-    
 function updateTimer(){
     var minutes = Math.floor(time/60);
     let seconds = time % 60;
@@ -28,22 +30,23 @@ function updateTimer(){
     if (time == -2) {
         alert('You are out of time');
         clearInterval(timer);
-        startBtn.innerText = 'Restart'
-        startBtn.classList.remove('hide')
-        return
+        restartBtn.classList.remove('hide'); 
+        timerDisplay.innerText = '0:00';
     }
-} 
+    return
+}
 
 function startQuiz() {
     var nextBtn = document.getElementById("next-btn");
     questionContainer.classList.remove("hide");
     nextBtn.classList.remove("hide");
     startBtn.classList.add("hide");
+    restartBtn.classList.add("hide");
     timerDisplay.classList.remove("hide");
+    scoreDisplay.classList.remove("hide");
     randomQuestions = myQuestions.sort(() => Math.random() - .5);
     questionNum = 0;
-    setNextQuestion()
-    
+    setNextQuestion();
     console.log("I was clicked")
 }
 
@@ -64,7 +67,8 @@ function showQuestion(question) {
     button.addEventListener('click', selectAnswer)
     answerTextEl.appendChild(button)
     });
- }
+}
+
 function resetState() {
     nextBtn.classList.add('hide')
     while (answerTextEl.firstChild){
@@ -83,8 +87,7 @@ function selectAnswer(e) {
     if (randomQuestions.length > questionNum + 1) {
         nextBtn.classList.remove('hide')
     } else {
-        startBtn.innerText = 'Restart'
-        startBtn.classList.remove('hide')
+        restartBtn.classList.remove('hide')
     }
     
 }
@@ -97,20 +100,23 @@ function setStatusClass(element, correct) {
         element.classList.add('wrong')
     }
 }
-
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
-// function answerIsCorrect() {
-//     document.getElementById(answerTextEl).style.backgroundColor = "green"
-
+// starting on code to confirm answers on click
+// var verifyAnswer = (myQuestions, answers) => {
+//     if (myQuestions[answers] === true) {
+//         return score = score++;
+//     } else time = time--;
+//     console.log(verifyAnswer)
 // }
+// myQuestions.forEach((question) => {
 
-// function answerIsWrong() {
-//     document.getElementById(answerTextEl).style.backgroundColor = "red"
-// }
+// })
+
+
+
 
 var myQuestions = [
     {
