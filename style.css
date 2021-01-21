@@ -75,3 +75,10 @@ body {
     top: 0;
     right: 0;  
 }
+.wrong {
+background-color: red;
+}
+.correct {
+background-color: green;
+
+}
