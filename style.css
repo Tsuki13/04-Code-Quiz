@@ -80,5 +80,7 @@ background-color: red;
 }
 .correct {
 background-color: green;
-
+}
+.bottom-margin {
+    margin-bottom: 5px;
 }

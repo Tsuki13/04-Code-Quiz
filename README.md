@@ -21,4 +21,7 @@ THEN I can save my initials and score
 ```
 
 ## Preview
+You have 30 seconds to answer 5 coding questions, if you get one wrong 10 seconds is deducted from the timer. 
 <img src="assets/Quiz-preview.png">
+When the quiz is complete save your scores!
+<img src="assets/highscores.png">
